@@ -1,13 +1,21 @@
 <div class="spotify__home-container row">
   <div class="spotify__home-container_side-bar col-2">
-    <div>
+    <div class="spotify__home-container_side-bar-item">
       <img
-        width="150"
+        width="100"
         class="m-3 text-left"
         src="assets/spotify_light.svg"
         alt="Spotify Logo"
       />
     </div>
+    <div
+      class="spotify__home-container_side-bar-item"
+      *ngFor="let item of menuItems"
+    >
+      <a [routerLink]="item.path">{{ item.label }}</a>
+    </div>
   </div>
-  <div class="spotify__home-container_playlist-container col-10"></div>
+  <div class="spotify__home-container_playlist-container col-10">
+    <app-top-nav />
+  </div>
 </div>
